@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DMSServices", "..\DMSServices", "{7A5E637F-8BE4-4BF2-A2BC-993C9788608B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50788"
+		Debug.AspNetCompiler.PhysicalPath = "..\DMSServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50788\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50788"
+		Release.AspNetCompiler.PhysicalPath = "..\DMSServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50788\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50788"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50788"
+		Debug.AspNetCompiler.PhysicalPath = "..\DMSServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50788\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50788"
+		Release.AspNetCompiler.PhysicalPath = "..\DMSServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50788\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50788"
+		SlnRelativePath = "..\DMSServices\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A5E637F-8BE4-4BF2-A2BC-993C9788608B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5E637F-8BE4-4BF2-A2BC-993C9788608B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B620E11E-5103-472A-824B-2A0477FC0CEC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hcitfs2012.hq.local:8080/tfs/hci_applications
+		SccLocalPath0 = .
+	EndGlobalSection
+EndGlobal

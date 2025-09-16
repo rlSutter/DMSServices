@@ -1,0 +1,398 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="GOOGLEBOT" CONTENT="NOARCHIVE">
+<title>Search for Documents</title>
+<link href="//datafluxapp/cs2/tips.css" rel="stylesheet">
+<!--Main-->
+<script type="text/javascript" src="//datafluxapp/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+var EmpId = getUrlParameter('ID');
+var URL = "";
+$(document).ready(function () {
+    $("a").wTooltip({
+        style: {
+            fontFamily: "Arial, Helvetica, sans-serif",
+            fontSize: "11"
+        }
+    });
+    $('#content1').hide();
+    $("#EID").val(EmpId);
+	$('a#click').click(function(){
+		$('#content1').show(0);
+		document.getElementById('close').style.visibility = 'visible';
+		document.getElementById('click').style.visibility = 'hidden';
+		document.getElementById('close').focus();
+	});
+	$('a#close').click(function(){
+   		$('#content1').hide(0);
+		document.getElementById('close').style.visibility = 'hidden';
+		document.getElementById('click').style.visibility = 'visible';
+    });
+    $("#form1").submit(function (e) {
+        e.preventDefault();
+        var formArray = $("#form1").serializeArray();
+        var form_data = "";
+        $.each(formArray, function (index, item) {
+            form_data = form_data + "&" + item.name + "=";
+            if (item.name == "EID") { form_data = form_data + EmpId; }
+            else { form_data = form_data + item.value; }
+        });
+        //Convert the content submitted by form1 into an object
+        var URL = "GetContent.ashx?" + form_data;
+        window.location.href = URL;
+    });
+    });
+function redirect() {
+    document.location.href = URL;
+}
+function submitForm() {
+    var formArray = $("#form1").serializeArray();
+    var form_data = "";
+    $.each(formArray, function (index, item) {
+        form_data = form_data + "&" + item.name + "=";
+        if (item.name == "EID") { form_data = form_data + EmpId; }
+        else { form_data = form_data + item.value; }
+    });
+    //Convert the content submitted by form1 into an object
+    var URL = "GetContent.ashx?" + form_data;
+    window.location.href = URL;
+}
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+}
+function DoCommand(szCommand) {
+    if (szCommand == "close"){
+       window.close(); }
+}
+function openNewWindow(fileName,theWidth,theHeight) {
+	window.open(fileName,"Details","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width="+theWidth+",height="+theHeight)
+}
+function openNewWin2(fileName,theWidth,theHeight) {
+	window.open(fileName,"Option","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width="+theWidth+",height="+theHeight)
+}
+function breakout_of_frame()
+{
+  if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+}
+</script>
+<style>
+#content1 {
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: -12px;
+}
+#content1 li { margin-left: 12px }
+</style>
+
+<!--Tooltips-->
+<script src="//datafluxapp/js/wtooltip.js" type="text/javascript"></script>
+<!--TimeDate-->
+<link rel="stylesheet" href="//datafluxapp/css/jquery.clockpick.1.2.7.css" type="text/css">
+<script type="text/javascript" src="//datafluxapp/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="//datafluxapp/js/jquery.clockpick.1.2.7.min.js"></script>
+<script type="text/javascript" src="//datafluxapp/js/date.js"></script>
+<script type="text/javascript" src="//datafluxapp/js/jquery.datePicker.min-2.1.2.js"></script>
+<link rel="stylesheet" href="//datafluxapp/css/datePicker.css" type="text/css">
+<!--Calendar-->
+<style type="text/css">
+    @import url(//datafluxapp/js/cal/calendar-win2k-1.css);
+</style>
+<script type="text/javascript" src="//datafluxapp/js/cal/calendar.js"></script>
+<script type="text/javascript" src="//datafluxapp/js/cal/lang/calendar-en.js"></script>
+<script type="text/javascript" src="//datafluxapp/js/cal/calendar-setup.js"></script>
+<title>Search Documents</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    <table width="*" border="0" cellspacing="0" cellpadding="0" style="padding-top: 5px; padding-left: 5px;">
+        <tr valign="top">
+            <td>
+                <table border="0" cellpadding="0" cellspacing="1"><tr valign="top"><td class="otherlinks"><A HREF="https://w4.certegrity.com/dmsa.nsf/OpenContent?OpenAgent&NEW=Y&ID=&DMU=Y&SBU=Y&USR=Y&DOM=TIPS&POP=N&CID=DSFJ125539SW&CFL=Y&ASR=Y&EID=1-2T&CIS=RWD&NTY=RWD" class="buttons2">Add a Document</A></td></tr></table>
+                <img src="//datafluxapp/images/spacer2.gif" width="4" height="3"><br>
+                <table width="750" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF">
+                    <tr>
+                        <td width="750" valign="top" bgcolor="#F5ECDA" class="bodyKO">
+                            <div align="left"><span class="BigHeader"><strong>Search Documents</strong></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" bgcolor="#F0F0F0" class="bodyKO">
+                            <table width="750" border="0" cellpadding="2" cellspacing="0" bgcolor="#F0F0F0">
+                                <tr>
+                                    <td width="4" rowspan="4" valign="top"><img src="//datafluxapp/images/spacer2.gif" width="4" height="3"></td>
+                                    <td width="740" valign="top" class="body">Please enter any combination of search criteria below, and click the button labeled <b><font color="#FF0000">Look Up Document(s)</font></b>. Please note that entering no search criteria will return all records that are available to you, but may require a lengthy search time.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+            </td>
+        </tr>
+    </table>
+    <form id="form1">
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><br>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header"><strong>Please select a category:</strong> 
+        <SELECT NAME="CTI" class="Body"><OPTION VALUE="any" SELECTED>Any<OPTION VALUE="97">Account<OPTION VALUE="64">Architecture<OPTION VALUE="89">Artwork<OPTION VALUE="65">Assistance<OPTION VALUE="189">Attachments<OPTION VALUE="82">Benefits<OPTION VALUE="75">Beverage Program Reports<OPTION VALUE="112">Certification Documents<OPTION VALUE="111">Contact Documents<OPTION VALUE="8">Course Asset<OPTION VALUE="102">Course Documents<OPTION VALUE="10">Course Resource<OPTION VALUE="9">Customer Service<OPTION VALUE="68">Documentation<OPTION VALUE="110">Employment Documents<OPTION VALUE="100">Etips On Premise<OPTION VALUE="1">Exams<OPTION VALUE="77">Fulfillment<OPTION VALUE="12">Funding Opportunities<OPTION VALUE="70">Government<OPTION VALUE="118">Images<OPTION VALUE="117">Legal Documents<OPTION VALUE="6">Lesson<OPTION VALUE="84">Marketing Training<OPTION VALUE="96">Master Trainers<OPTION VALUE="63">Newsletters<OPTION VALUE="109">Order Documents<OPTION VALUE="128">Participant Documents<OPTION VALUE="101">Participant Exam Questions<OPTION VALUE="2">Participant Exams<OPTION VALUE="79">Partner Organizations<OPTION VALUE="74">Partners<OPTION VALUE="181">Passport Documents<OPTION VALUE="71">Personnel<OPTION VALUE="91">Program Descriptions<OPTION VALUE="69">Proposals<OPTION VALUE="182">Public Course Documents<OPTION VALUE="7">Quiz<OPTION VALUE="78">Regulation Management<OPTION VALUE="85">Regulatory Forms And Training Resources<OPTION VALUE="80">Regulatory Supplements<OPTION VALUE="62">Sales<OPTION VALUE="94">Sales Document<OPTION VALUE="72">Sales Information<OPTION VALUE="87">Sales Support<OPTION VALUE="126">Session Documents<OPTION VALUE="4">Session Roster<OPTION VALUE="73">Technical<OPTION VALUE="127">Trainer Documents<OPTION VALUE="3">Trainer Exams<OPTION VALUE="187">Trainer Workshop Materials<OPTION VALUE="90">Trainers<OPTION VALUE="88">Training<OPTION VALUE="92">Training Provider Services<OPTION VALUE="98">Tutorials<OPTION VALUE="86">University Articles<OPTION VALUE="83">University Training<OPTION VALUE="188">Web Parts<OPTION VALUE="108">Workshop Documents</SELECT></span>
+        <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header"><strong>Please select a keyword:</strong> 
+        <SELECT NAME="KEY" class="Body"><OPTION VALUE="any" SELECTED>Any<OPTION VALUE="16">Employee Only<OPTION VALUE="17">Job Aids<OPTION VALUE="5">Master Trainer<OPTION VALUE="7">Participant<OPTION VALUE="11">Participant Only<OPTION VALUE="2">PdfPassword<OPTION VALUE="14">Public<OPTION VALUE="13">Report Only<OPTION VALUE="9">Shared<OPTION VALUE="12">Site Only<OPTION VALUE="15">System Admin<OPTION VALUE="3">Trainer<OPTION VALUE="10">Trainer Only<OPTION VALUE="8">Training<OPTION VALUE="1">eCabinet</SELECT></span>
+        <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header">
+            <strong>Please enter the document #:</strong>
+            <input name="DOC_ID" value="" size=12 class="Body">
+        </span>
+        <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header">
+            <strong>Please enter part or all of the document name:</strong>
+            <input name="NME" value="" size=40 class="Body">
+        </span>
+        <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header">
+            <strong>Please select the type of document:</strong>
+            <select name="DCT" class="Body">
+                <option value="any" selected>Any
+                <option value="pdf">Adobe Acrobat
+                <option value="doc">Microsoft Word
+                <option value="xls">Microsoft Excel
+                <option value="tif">TIFF
+                <option value="jpg">JPEG
+                <option value="png">PNG
+                <option value="swf">Adobe Flash
+                <option value="ppt">Microsoft Powerpoint
+                <option value="txt">Text
+                <option value="zip">Zip
+                <option value="igx">Micrografx
+                <option value="docx">Microsoft Word Open XML Document
+                <option value="msg">Mail Message
+                <option value="pages">Pages Document
+                <option value="wpd">WordPerfect Document
+                <option value="wps">Microsoft Works Word Processor Document
+                <option value="123">Lotus 1-2-3 Spreadsheet
+                <option value="accdb">Access 2007 Database File
+                <option value="csv">Comma Separated Values File
+                <option value="dat">Data File
+                <option value="db">Database File
+                <option value="dll">Dynamic Link Library
+                <option value="mdb">Microsoft Access Database
+                <option value="pps">PowerPoint Slide Show
+                <option value="sql">Structured Query Language Data
+                <option value="wks">Microsoft Works Spreadsheet
+                <option value="mng">Multiple Network Graphic
+                <option value="pct">Picture File
+                <option value="bmp">Bitmap Image File
+                <option value="jpeg">JPEG Image File
+                <option value="png">Portable Network Graphic
+                <option value="psd">Photoshop Document
+                <option value="psp">Paint Shop Pro Image File
+                <option value="thm">Thumbnail Image File
+                <option value="tif">Tagged Image File
+                <option value="ai">Adobe Illustrator File
+                <option value="drw">Drawing File
+                <option value="dxf">Drawing Exchange Format File
+                <option value="eps">Encapsulated PostScript File
+                <option value="ps">PostScript File
+                <option value="svg">Scalable Vector Graphics File
+                <option value="3dm">Rhino 3D Model
+                <option value="indd">Adobe InDesign File
+                <option value="pdf">Portable Document Format File
+                <option value="qxd">QuarkXPress Document
+                <option value="qxp">QuarkXPress Project File
+                <option value="aac">Advanced Audio Coding File
+                <option value="aif">Audio Interchange File Format
+                <option value="iff">Interchange File Format
+                <option value="m3u">Media Playlist File
+                <option value="m4a">MPEG-4 Audio File
+                <option value="mid">MIDI File
+                <option value="midi">MIDI File
+                <option value="mp3">MP3 Audio File
+                <option value="mpa">MPEG-2 Audio File
+                <option value="ra">Real Audio File
+                <option value="ram">Real Audio Media
+                <option value="wav">WAVE Audio File
+                <option value="wma">Windows Media Audio File
+                <option value="3g2">3GPP2 Multimedia File
+                <option value="3gp">3GPP Multimedia File
+                <option value="asf">Advanced Systems Format File
+                <option value="asx">Microsoft ASF Redirector File
+                <option value="avi">Audio Video Interleave File
+                <option value="flv">Flash Video File
+                <option value="mkv">Matroska Video File
+                <option value="mov">Apple QuickTime Movie
+                <option value="mp4">MPEG-4 Video File
+                <option value="mpg">MPEG Video File
+                <option value="qt">Apple QuickTime Movie
+                <option value="rm">Real Media File
+                <option value="swf">Macromedia Flash Movie
+                <option value="vob">DVD Video Object File
+                <option value="wmv">Windows Media Video File
+                <option value="asp">Active Server Page
+                <option value="css">Cascading Style Sheet
+                <option value="htm">Hypertext Markup Language File
+                <option value="html">Hypertext Markup Language File
+                <option value="js">JavaScript File
+                <option value="jsp">Java Server Page
+                <option value="php">Hypertext Preprocessor File
+                <option value="xhtml">Extensible Hypertext Markup Language File
+                <option value="fnt">Windows Font File
+                <option value="fon">Generic Font File
+                <option value="otf">OpenType Font
+                <option value="ttf">TrueType Font
+                <option value="8bi">Photoshop Plug-in
+                <option value="plugin">Mac OS X Plug-in
+                <option value="xll">Excel Add-In File
+                <option value="cab">Windows Cabinet File
+                <option value="cpl">Windows Control Panel
+                <option value="cur">Windows Cursor
+                <option value="dmp">Windows Memory Dump
+                <option value="drv">Device Driver
+                <option value="key">Security Key
+                <option value="lnk">File Shortcut
+                <option value="sys">Windows System File
+                <option value="xml">XML
+                <option value="html">HTML
+                <option value="log">Text Log
+                <option value="cfg">Configuration File
+                <option value="ini">Windows Initialization File
+                <option value="reg">Registration Information
+                <option value="app">Mac OS X Application
+                <option value="bat">DOS Batch File
+                <option value="cgi">Common Gateway Interface Script
+                <option value="com">DOS Command File
+                <option value="exe">Windows Executable File
+                <option value="pif">Program Information File
+                <option value="vb">VBScript File
+                <option value="ws">Windows Script
+                <option value="7z">7-Zip Compressed File
+                <option value="deb">Debian Software Package
+                <option value="gz">Gnu Zipped File
+                <option value="pkg">Mac OS X Installer Package
+                <option value="rar">WinRAR Compressed Archive
+                <option value="sea">Self-Extracting Archive
+                <option value="sit">Stuffit Archive
+                <option value="sitx">Stuffit X Archive
+                <option value="zip">Zipped File
+                <option value="bin">Macbinary II Encoded File
+                <option value="hqx">BinHex 4 Encoded File
+                <option value="mim">Multi-Purpose Internet Mail Message
+                <option value="uue">Uuencoded File
+                <option value="c">C/C++ Source Code File
+                <option value="cpp">C++ Source Code File
+                <option value="java">Java Source Code File
+                <option value="pl">Perl Script
+                <option value="bak">Backup File
+                <option value="bup">Backup File
+                <option value="gho">Norton Ghost Backup File
+                <option value="old">Backup File
+                <option value="ori">Original File
+                <option value="tmp">Temporary File
+                <option value="dmg">Mac OS X Disk Image
+                <option value="iso">Disc Image File
+                <option value="toast">Toast Disc Image
+                <option value="vcd">Virtual CD
+                <option value="gam">Saved Game File
+                <option value="sav">Saved Game
+                <option value="msi">Windows Installer Package
+                <option value="part">Partially Downloaded File
+                <option value="torrent">BitTorrent File
+                <option value="yps">Yahoo! Messenger Data File
+                <option value="flv">Adobe Flash Video
+                <option value="gif">GIF
+                <option value="rtf">Rich-Text Format
+            </select>
+        </span>
+        <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+        <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header">
+            <strong>Please enter a term or terms found in the description:</strong>
+            <input name="DSC" value="" size=60 class="Body">
+        </span></td></tr>
+        <tr>
+            <td>
+                <span class="Body"><center><font color="Red">-and/or-</font></center></span>
+                <table cellpadding=0 cellspacing=0>
+                    <tr valign="Middle">
+                        <td>
+                            <img src="//datafluxapp/images/spacer2.gif" width="16" height="8"><span class="Header"><strong>Please enter the first (or only) date created:</strong></span>
+                            <input name="DTH" value="" size=12 onkeydown="javascript:return dFilter (event.keyCode, this, '##/##/####');" id="SDate_Held" class="Body">
+                        </td>
+                        <td>
+                            <img src="//datafluxapp/images/calendar.gif" id="f_trigger_c" title="Select Start Date" onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
+                            <script type="text/javascript">
+                                Calendar.setup({
+                                    inputField: "DTH",
+                                    ifFormat: "%m/%d/%Y",
+                                    button: "f_trigger_c",
+                                    align: "Tl",
+                                    weekNumbers: false
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+                <table cellpadding=0 cellspacing=0>
+                    <tr valign="Middle">
+                        <td>
+                            <img src="//datafluxapp/images/spacer2.gif" width="32" height="8"><span class="Header"><strong> and the end date created (leave blank if the same as the first date):</strong></span>
+                            <input name="EDT" value="" size=12 onkeydown="javascript:return dFilter (event.keyCode, this, '##/##/####');" id="EDate_Held" class="Body">
+                        </td>
+                        <td>
+                            <img src="//datafluxapp/images/calendar.gif" id="f_trigger_d" title="Select End Date" onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
+                            <script type="text/javascript">
+                                Calendar.setup({
+                                    inputField: "EDT",
+                                    ifFormat: "%m/%d/%Y",
+                                    button: "f_trigger_d",
+                                    align: "Tl",
+                                    weekNumbers: false
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <input type="submit" value="Look up Document(s)" id="Button1" />
+                <table><tr><td class="Body"><font color="blue">(please only click once - some searches can take up to 30 seconds to complete during peak hours.)</font></td></tr></table>
+            </td>
+        </tr>
+        </table>
+        <p>
+            <input name="EID" value="" Type="Hidden" id="EID">
+            <input name="DMU" value="Y" Type="Hidden">
+            <input name="ASR" value="Y" Type="Hidden">
+            <input name="SBU" value="Y" Type="Hidden">
+            <input name="USR" value="Y" Type="Hidden">
+            <input name="CFL" value="Y" Type="Hidden"><br>
+            <input name="DOM" value="TIPS" Type="Hidden">
+            <input name="POP" value="N" Type="Hidden">
+            <input name="SUB_ID" value="1-2X3EQ" Type="Hidden">
+            <input name="PUB" value="" Type="Hidden">
+            <input name="OWN" value="" Type="Hidden">
+            <input name="DLF" value="" Type="Hidden"><br>
+            <input name="ASN" value="" Type="Hidden">
+            <input name="ASI" value="" Type="Hidden">
+            <input name="ASK" value="" Type="Hidden">
+            <input name="AOP" value="Y" Type="Hidden">
+            <input name="APM" value="" Type="Hidden">
+            <input name="APT" value="" Type="Hidden"><br>
+            <input name="ADF" value="" Type="Hidden">
+            <input name="CID" value="" Type="Hidden">
+            <input name="CIS" value="RWD" Type="Hidden">
+            <input name="NTY" value="RWD" Type="Hidden">
+            <input name="AFL" value="" Type="Hidden">
+</form>
+</body>
+</html>
